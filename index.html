@@ -1,0 +1,704 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A Journey Written in Flowers 🌹</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Poppins:wght@300;400;500&display=swap');
+
+:root {
+  --cream: #fff5e9;
+  --rose: #e9a6ae;
+  --wine: #6c293f;
+  --gold: #e8c98a;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  color: var(--cream);
+  background:
+    radial-gradient(ellipse at top, #54283f 0%, #201624 50%, #100e18 100%);
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+  overflow-x: hidden;
+}
+
+button { font-family: inherit; cursor: pointer; }
+
+.stars {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background-image:
+    radial-gradient(2px 2px at 20% 30%, #fff5d5 50%, transparent 100%),
+    radial-gradient(1px 1px at 70% 20%, white 50%, transparent 100%),
+    radial-gradient(2px 2px at 80% 75%, #f5c9d7 50%, transparent 100%),
+    radial-gradient(1px 1px at 40% 85%, white 50%, transparent 100%);
+  background-size: 180px 180px;
+  animation: twinkle 5s infinite alternate;
+}
+
+@keyframes twinkle {
+  from { opacity: .35; }
+  to { opacity: .9; }
+}
+
+section {
+  padding: 75px 20px;
+  max-width: 850px;
+  margin: auto;
+}
+
+.eyebrow {
+  color: var(--gold);
+  letter-spacing: 5px;
+  font-size: 10px;
+  text-transform: uppercase;
+}
+
+h1, h2, h3, .serif {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 400;
+}
+
+h1 {
+  font-size: clamp(42px, 9vw, 76px);
+  line-height: 1.02;
+  margin: 20px 0;
+}
+
+h2 {
+  font-size: clamp(34px, 7vw, 49px);
+  margin: 12px 0 25px;
+}
+
+p {
+  font-size: 13px;
+  line-height: 2;
+  color: #e6d4dc;
+}
+
+button {
+  color: #321a2a;
+  background: linear-gradient(135deg, #f8dfb4, #e8a9b5);
+  border: none;
+  border-radius: 40px;
+  padding: 13px 25px;
+  font-size: 11px;
+  letter-spacing: 1px;
+  transition: .3s;
+}
+
+button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 25px #e9a6ae55;
+}
+
+.hero { padding-top: 65px; }
+
+.subtitle {
+  max-width: 430px;
+  margin: auto;
+}
+
+.bouquet {
+  position: relative;
+  width: min(100%, 350px);
+  height: 345px;
+  margin: 25px auto 0;
+  perspective: 800px;
+}
+
+.flower {
+  position: absolute;
+  font-size: 56px;
+  filter: drop-shadow(0 5px 12px #0006);
+  animation: float 3s ease-in-out infinite;
+  transform-style: preserve-3d;
+}
+
+.f1 { left: 27%; top: 30px; }
+.f2 { left: 46%; top: 4px; animation-delay: -.8s; }
+.f3 { left: 61%; top: 38px; animation-delay: -1.3s; }
+.f4 { left: 12%; top: 78px; animation-delay: -.5s; }
+.f5 { left: 41%; top: 88px; animation-delay: -1.8s; }
+.f6 { left: 65%; top: 104px; animation-delay: -.9s; }
+
+@keyframes float {
+  0%, 100% { transform: translateY(0) rotate(-5deg); }
+  50% { transform: translateY(-12px) rotate(5deg); }
+}
+
+.stems {
+  position: absolute;
+  top: 115px;
+  left: 50%;
+  width: 4px;
+  height: 155px;
+  background: linear-gradient(#67966a, #244a3a);
+  transform: translateX(-50%);
+  border-radius: 10px;
+}
+
+.leaf {
+  position: absolute;
+  width: 45px;
+  height: 18px;
+  background: #4c805c;
+  border-radius: 100% 0 100% 0;
+}
+
+.leaf.left { top: 190px; left: 31%; transform: rotate(25deg); }
+.leaf.right { top: 215px; right: 29%; transform: rotate(70deg); }
+
+.wrapper {
+  position: absolute;
+  top: 220px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 145px;
+  height: 100px;
+  background: linear-gradient(130deg, #f1d8bd, #a66d77, #e9b9b5);
+  clip-path: polygon(0 0, 100% 0, 68% 100%, 32% 100%);
+  opacity: .95;
+}
+
+.ribbon {
+  position: absolute;
+  top: 260px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 31px;
+}
+
+.scroll-note {
+  font-size: 10px;
+  color: #cbaebc;
+  letter-spacing: 3px;
+  margin-top: 15px;
+}
+
+.divider {
+  width: 80px;
+  height: 1px;
+  background: var(--gold);
+  opacity: .6;
+  margin: 25px auto;
+}
+
+.paper {
+  background: #f9eddd;
+  color: #583448;
+  padding: 30px 25px;
+  border-radius: 3px;
+  max-width: 520px;
+  margin: 25px auto;
+  box-shadow: 0 15px 60px #0003;
+  transform: rotate(-1deg);
+}
+
+.paper p { color: #65485a; }
+
+.paper h3 {
+  font-size: 32px;
+  margin: 0;
+}
+
+#letterContent, #finalContent {
+  display: none;
+  animation: appear 1s ease;
+}
+
+@keyframes appear {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.world-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 13px;
+  margin-top: 28px;
+  text-align: left;
+}
+
+.place {
+  padding: 20px 15px;
+  border: 1px solid #e7c5d22a;
+  border-radius: 12px;
+  background: #ffffff08;
+  transition: .3s;
+}
+
+.place:hover {
+  background: #ffffff12;
+  transform: translateY(-3px);
+}
+
+.place .emoji { font-size: 27px; }
+
+.place h3 {
+  font-size: 24px;
+  margin: 9px 0 2px;
+}
+
+.place p {
+  font-size: 11px;
+  line-height: 1.8;
+  margin-bottom: 0;
+}
+
+.timeline {
+  border-left: 1px solid #e9c98a88;
+  text-align: left;
+  max-width: 460px;
+  margin: 30px auto;
+}
+
+.moment {
+  position: relative;
+  padding: 0 0 28px 25px;
+}
+
+.moment:before {
+  content: "✦";
+  position: absolute;
+  left: -6px;
+  top: 0;
+  color: var(--gold);
+  font-size: 12px;
+}
+
+.moment h3 {
+  margin: 0;
+  font-size: 24px;
+}
+
+.moment p { margin: 4px 0; }
+
+.secret-box {
+  max-width: 440px;
+  margin: auto;
+  padding: 28px 20px;
+  border: 1px solid #e8c98a66;
+  border-radius: 15px;
+  background: #ffffff06;
+}
+
+.lock { font-size: 38px; }
+
+#secretMessage {
+  display: none;
+  margin-top: 25px;
+  animation: appear 1s ease;
+}
+
+#secretMessage p {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 23px;
+  line-height: 1.7;
+  color: #ffe8c9;
+}
+
+#password {
+  width: 100%;
+  max-width: 230px;
+  padding: 12px;
+  margin: 15px 0;
+  color: #fff4e8;
+  background: #ffffff0b;
+  border: 1px solid #e8c98a77;
+  border-radius: 25px;
+  outline: none;
+  text-align: center;
+}
+
+#password::placeholder { color: #c8afbf; }
+
+#error {
+  color: #f2a8ba;
+  min-height: 20px;
+  font-size: 11px;
+}
+
+.ending {
+  background: linear-gradient(180deg, transparent, #8e415322);
+  padding-bottom: 100px;
+}
+
+.heart {
+  font-size: 50px;
+  animation: heartbeat 1.5s infinite;
+}
+
+@keyframes heartbeat {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.13); }
+}
+
+footer {
+  padding: 20px;
+  font-size: 10px;
+  color: #a68a9b;
+  letter-spacing: 2px;
+}
+
+.petal {
+  position: fixed;
+  top: -30px;
+  z-index: 5;
+  pointer-events: none;
+  animation: fall linear forwards;
+}
+
+@keyframes fall {
+  to {
+    transform: translateY(110vh) rotate(720deg);
+    opacity: .1;
+  }
+}
+
+@media (max-width: 420px) {
+  section { padding: 60px 18px; }
+  .world-grid { gap: 9px; }
+  .place { padding: 15px 11px; }
+  .place h3 { font-size: 21px; }
+}
+</style>
+</head>
+
+<body>
+<div class="stars"></div>
+
+<section class="hero">
+  <div class="eyebrow">A little universe, made for you</div>
+  <h1>A Journey<br><i>Written in Flowers</i></h1>
+  <p class="subtitle">
+    Ada tempat-tempat yang indah di dunia ini.
+    Tapi ada satu perjalanan yang tidak ingin
+    kuakhiri hanya karena kita sudah sampai tujuan.
+  </p>
+
+  <div class="bouquet">
+    <div class="flower f1">🌹</div>
+    <div class="flower f2">🌷</div>
+    <div class="flower f3">🌹</div>
+    <div class="flower f4">🌸</div>
+    <div class="flower f5">🌺</div>
+    <div class="flower f6">🌷</div>
+    <div class="stems"></div>
+    <div class="leaf left"></div>
+    <div class="leaf right"></div>
+    <div class="wrapper"></div>
+    <div class="ribbon">🎀</div>
+  </div>
+
+  <div class="divider"></div>
+  <p class="scroll-note">SEBUAH CERITA MENUNGGU DI BAWAH</p>
+  <button onclick="document.querySelector('#journey').scrollIntoView()">
+    Mulai perjalanan ✧
+  </button>
+</section>
+
+<section id="journey">
+  <div class="eyebrow">Chapter I · The World</div>
+  <h2>Jika dunia adalah buku...</h2>
+  <p>
+    Aku ingin mengunjungi banyak halaman bersamamu.
+    Bukan untuk mengumpulkan tempat, melainkan
+    untuk mengumpulkan cerita yang suatu hari
+    bisa kita kenang kembali.
+  </p>
+
+  <div class="world-grid">
+    <div class="place">
+      <div class="emoji">🗼</div>
+      <h3>Paris, France</h3>
+      <p>Kota cahaya, tempat malam terasa seperti puisi.</p>
+    </div>
+    <div class="place">
+      <div class="emoji">🌸</div>
+      <h3>Kyoto, Japan</h3>
+      <p>Kelopak yang jatuh, mengajarkan indahnya waktu.</p>
+    </div>
+    <div class="place">
+      <div class="emoji">🏔️</div>
+      <h3>Swiss Alps</h3>
+      <p>Gunung yang tinggi, seperti mimpi yang kita jaga.</p>
+    </div>
+    <div class="place">
+      <div class="emoji">🌌</div>
+      <h3>New Zealand</h3>
+      <p>Langit luas, untuk harapan yang belum selesai.</p>
+    </div>
+    <div class="place">
+      <div class="emoji">🌊</div>
+      <h3>Maldives</h3>
+      <p>Laut yang tenang, seperti saat dunia terasa cukup.</p>
+    </div>
+    <div class="place">
+      <div class="emoji">🌅</div>
+      <h3>Bali, Indonesia</h3>
+      <p>Tempat matahari pulang, tempat hati beristirahat.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="eyebrow">Chapter II · The Meaning</div>
+  <h2>Bukan soal seberapa jauh</h2>
+
+  <div class="timeline">
+    <div class="moment">
+      <h3>Tentang memulai</h3>
+      <p>
+        Kadang, sesuatu yang berarti dimulai dari hal
+        sederhana. Sebuah sapaan, percakapan kecil,
+        lalu kehadiran yang perlahan menjadi penting.
+      </p>
+    </div>
+    <div class="moment">
+      <h3>Tentang bertahan</h3>
+      <p>
+        Tidak semua hari akan semudah yang kita bayangkan.
+        Akan ada perbedaan, kesibukan, dan hal-hal yang
+        tidak selalu bisa dijelaskan. Semoga kita tetap
+        mau mendengar sebelum memilih menjauh.
+      </p>
+    </div>
+    <div class="moment">
+      <h3>Tentang berdua</h3>
+      <p>
+        Bagiku, berjalan bersama bukan berarti harus
+        selalu sepakat. Melainkan mau belajar memahami,
+        saling menghargai, dan memperbaiki hal yang
+        masih bisa diperbaiki.
+      </p>
+    </div>
+    <div class="moment">
+      <h3>Tentang masa depan</h3>
+      <p>
+        Aku tidak bisa menebak semua halaman berikutnya.
+        Namun aku berharap, selama kita sama-sama mau
+        melangkah, akan ada banyak cerita baik yang
+        belum sempat kita tulis.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="eyebrow">Chapter III · A Letter</div>
+  <h2>Ada sesuatu untukmu...</h2>
+  <p>
+    Tidak semua hal perlu diumumkan kepada dunia.
+    Sebagian cukup disimpan di tempat yang tepat,
+    lalu dibuka ketika waktunya tiba.
+  </p>
+
+  <div class="paper">
+    <div style="font-size:35px">✉️</div>
+    <h3>Untuk seseorang...</h3>
+    <p>Yang mungkin sudah tahu, atau mungkin belum.</p>
+    <button onclick="openLetter()" id="letterButton">
+      Buka surat rahasia
+    </button>
+
+    <div id="letterContent">
+      <div class="divider"></div>
+      <p>
+        Terima kasih karena pernah menjadi bagian
+        dari hari-hariku. Terima kasih untuk waktu,
+        cerita, tawa, perhatian, dan hal-hal sederhana
+        yang mungkin terlihat biasa, tetapi punya
+        arti lebih besar daripada yang bisa kujelaskan.
+      </p>
+      <p>
+        Kalau suatu hari kita mengingat kembali
+        perjalanan ini, aku berharap yang tertinggal
+        bukan hanya tentang sulitnya hari-hari tertentu,
+        tetapi juga tentang bagaimana kita pernah
+        berusaha membuat semuanya menjadi lebih baik.
+      </p>
+      <p>
+        Aku tidak mengharapkan cerita yang selalu
+        sempurna. Aku hanya berharap kita tidak lupa
+        bahwa setiap hubungan membutuhkan dua orang
+        yang sama-sama mau menjaga, memahami,
+        dan menghargai satu sama lain.
+      </p>
+      <p>
+        Jadi, untuk semua hal yang telah kita lewati:
+        terima kasih. Untuk hari ini, terima kasih.
+        Dan untuk hari esok yang belum kita kenal,
+        semoga masih ada kesempatan untuk menulis
+        cerita yang lebih indah.
+      </p>
+      <p><i>— Sebuah pesan yang tak membutuhkan nama.</i></p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="eyebrow">Chapter IV · Classified</div>
+  <h2>Pesan yang tersembunyi</h2>
+
+  <div class="secret-box">
+    <div class="lock" id="lockIcon">🔐</div>
+    <p>
+      Beberapa pintu tidak terbuka dengan kunci.
+      Mereka terbuka ketika kamu mengingat satu kata.
+    </p>
+
+    <p style="font-size:11px;color:#e8c98a">
+      PETUNJUK: Dua orang, satu perjalanan.
+    </p>
+
+    <input
+      id="password"
+      type="password"
+      placeholder="Masukkan kata rahasia..."
+      autocomplete="off"
+    >
+    <br>
+    <button onclick="unlock()">Buka pesan ✧</button>
+    <div id="error"></div>
+
+    <div id="secretMessage">
+      <div class="divider"></div>
+      <p>
+        "Jika suatu hari dunia terasa terlalu luas,
+        semoga kita ingat bahwa perjalanan tidak
+        selalu tentang menemukan tempat baru.
+        Terkadang, perjalanan adalah tentang
+        tetap menemukan alasan untuk saling memahami."
+      </p>
+      <p style="font-size:12px">
+        Tidak ada peta yang menjamin arah kita.
+        Yang ada hanyalah pilihan untuk terus
+        belajar berjalan dengan baik.
+      </p>
+      <div style="font-size:30px">🌹🗝️🌹</div>
+    </div>
+  </div>
+</section>
+
+<section class="ending">
+  <div class="eyebrow">The final chapter · Not the end</div>
+  <div class="heart">🤍</div>
+  <h2>Untuk perjalanan<br><i>yang masih panjang</i></h2>
+
+  <p style="max-width:480px;margin:20px auto">
+    Terima kasih karena sudah menjadi bagian dari
+    cerita ini. Aku tidak tahu berapa banyak halaman
+    yang masih menunggu, berapa banyak kota yang
+    belum kita kenal, atau berapa banyak hal yang
+    kelak akan berubah.
+  </p>
+
+  <p style="max-width:480px;margin:20px auto">
+    Tetapi jika nanti kita sampai di tempat yang
+    pernah kita impikan, aku ingin kita mengingat
+    bahwa yang membuat perjalanan itu berarti
+    bukan hanya pemandangan di sekeliling kita,
+    melainkan semua hal yang kita pelajari sepanjang jalan.
+  </p>
+
+  <p style="max-width:480px;margin:20px auto">
+    Semoga kita terus bertumbuh, tetap menjadi diri
+    sendiri, dan selalu punya keberanian untuk
+    menjaga hal-hal baik yang memang ingin kita jaga.
+  </p>
+
+  <button onclick="showFinal()">Ada satu hal lagi...</button>
+
+  <div id="finalContent">
+    <div class="paper" style="margin-top:30px">
+      <div style="font-size:36px">💌</div>
+      <h3>Terima kasih.</h3>
+      <p>
+        Untuk semua yang telah kita lewati berdua.
+        Untuk cerita yang telah tertulis.
+        Dan untuk kemungkinan-kemungkinan indah
+        yang masih menunggu di depan sana.
+      </p>
+      <p>
+        <i>Semoga ini bukan sekadar cerita yang indah
+        untuk dikenang, melainkan awal dari banyak
+        hal baik yang kita pilih bersama.</i>
+      </p>
+      <div style="font-size:30px">🌹✨🌍</div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  A LITTLE SECRET BETWEEN THE STARS · MADE WITH CARE
+</footer>
+
+<script>
+function openLetter() {
+  const content = document.getElementById('letterContent');
+  content.style.display = 'block';
+  document.getElementById('letterButton').style.display = 'none';
+  petals(14);
+}
+
+function unlock() {
+  const input = document.getElementById('password');
+  const message = document.getElementById('secretMessage');
+  const error = document.getElementById('error');
+  const lock = document.getElementById('lockIcon');
+
+  // Kata rahasia: berdua
+  if (input.value.trim().toLowerCase() === 'berdua') {
+    message.style.display = 'block';
+    error.textContent = '';
+    lock.textContent = '🔓';
+    input.disabled = true;
+    petals(25);
+  } else {
+    error.textContent = 'Belum tepat. Coba ingat petunjuknya sekali lagi.';
+    input.value = '';
+    input.focus();
+  }
+}
+
+document.getElementById('password').addEventListener('keydown', function(e) {
+  if (e.key === 'Enter') unlock();
+});
+
+function showFinal() {
+  document.getElementById('finalContent').style.display = 'block';
+  document.getElementById('finalContent').scrollIntoView({
+    behavior: 'smooth',
+    block: 'center'
+  });
+  petals(35);
+}
+
+function petals(amount) {
+  const symbols = ['🌸', '🌹', '💗', '✨', '🌷'];
+
+  for (let i = 0; i < amount; i++) {
+    const petal = document.createElement('div');
+    petal.className = 'petal';
+    petal.textContent = symbols[Math.floor(Math.random() * symbols.length)];
+    petal.style.left = Math.random() * 100 + 'vw';
+    petal.style.animationDuration = (3 + Math.random() * 4) + 's';
+    petal.style.fontSize = (12 + Math.random() * 17) + 'px';
+    document.body.appendChild(petal);
+    petal.addEventListener('animationend', () => petal.remove());
+  }
+}
+</script>
+</body>
+</html>
